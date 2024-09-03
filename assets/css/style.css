@@ -153,7 +153,7 @@ li{
     width: 20%; /* 20% of the width */
 }
 
-h2{
+.h2{
     margin: 1rem 0;
     background-color: #007bff;
     text-align: center;
@@ -172,6 +172,10 @@ h2{
 .trash-cart{
     font-size: 15px;
     cursor: pointer;
+}
+.total-cart{
+    text-align: center;
+
 }
 @media(max-width:768px){
 
