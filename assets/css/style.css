@@ -78,7 +78,7 @@ li{
 }
 /* SECTION DISPLAY */
 .section-display{
-    background-color: rgb(197, 153, 238);
+    background-color: rgba(124, 124, 124, 0.557);
     display: flex;
     flex-wrap: wrap;
     justify-content: center;

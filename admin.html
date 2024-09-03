@@ -3,6 +3,7 @@
 <head>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/admin.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cart</title>
@@ -25,6 +26,29 @@
         </nav>
     </header>
 
+    <section class="form">
+        <form class="form_new_product" action="add_new_product" method="post" enctype="multipart/form-data">
+            <label for="product_file">New Product to Upload</label>
+            <input type="file" name="product_file" id="product_file">
+            
+            <label for="product_name">Name</label>
+            <input type="text" name="product_name" id="product_name">
+            
+            <label for="product_description">Description</label>
+            <input type="text" name="product_description" id="product_description">
+            
+            <label for="product_quantity">Quantity</label>
+            <input type="number" name="product_quantity" id="product_quantity">
+
+            <label for="product_price">Price</label>
+            <input type="number" name="product_price" id="product_price">
+
+            <label for="product_id">id</label>
+            <input type="number" name="product_id" id="product_id">
+            
+            <button type="submit">Upload Product</button>
+        </form>
+    </section>
     
     
 

@@ -1,4 +1,4 @@
-const mongoose = require('mongoose')
+/* const mongoose = require('mongoose')
 
 const ProductSchema = new mongoose.Schema({
     id: Number,
@@ -9,5 +9,4 @@ const ProductSchema = new mongoose.Schema({
     description: String
   });
   
-  //export default mongoose.model('eproducts', ProductSchema)
-  const ProductModel = mongoose.model('eproducts', ProductSchema);
+  const ProductModel = mongoose.model('eproducts', ProductSchema); */
