@@ -67,10 +67,8 @@ app.get('/admin', (req, res) => {
 app.post('/add_new_product', upload.single('product_file'), async (req, res) => {
   try {
     const { product_name, product_description, product_quantity, product_price, product_id } = req.body;
-    //console.log("Received product name from form:", product_name); // Log product name
-    //console.log("File details:", req.file); // Log file details
-
-    // Construct the new product object
+    
+   // Construct the new product object
     const newProduct = new ProductModel({
       id: product_id,
       price: product_price,

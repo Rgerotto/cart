@@ -1,57 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="../assets/css/style.css">
-    <link rel="stylesheet" href="../assets/css/admin.css">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <link rel="stylesheet" href="../assets/css/admin.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cart</title>
-</head>
-<body>
+  </head>
+  <body>
     <header>
-        <nav class="navbar">
-            <a href="index.html" class="nav-branding">Logo</a>
-            <ul class="nav-menu">
-                <li class="nav-item">
-                    <p class="item">0</p>
-                    <div class="nav-link"><i class="fa-solid fa-cart-shopping"></i></div>
-                </li>
-            </ul>
-            <div class="hamburguer">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
+      <nav class="navbar">
+        <a href="/" class="nav-branding">Logo</a>
+        <ul class="nav-menu">
+          <li class="nav-item">
+            <p class="item">0</p>
+            <div class="nav-link">
+              <i class="fa-solid fa-cart-shopping"></i>
             </div>
-        </nav>
+          </li>
+        </ul>
+      </nav>
     </header>
 
     <section class="form">
-        <form class="form_new_product" action="add_new_product" method="post" enctype="multipart/form-data">
-            <label for="product_file">New Product to Upload</label>
-            <input type="file" name="product_file" id="product_file">
-            
-            <label for="product_name">Name</label>
-            <input type="text" name="product_name" id="product_name">
-            
-            <label for="product_description">Description</label>
-            <input type="text" name="product_description" id="product_description">
-            
-            <label for="product_quantity">Quantity</label>
-            <input type="number" name="product_quantity" id="product_quantity">
+      <form
+        class="form_new_product"
+        action="add_new_product"
+        method="post"
+        enctype="multipart/form-data"
+      >
+        <label for="product_file">New Product to Upload</label>
+        <input type="file" name="product_file" id="product_file" />
 
-            <label for="product_price">Price</label>
-            <input type="number" name="product_price" id="product_price">
+        <label for="product_name">Name</label>
+        <input type="text" name="product_name" id="product_name" />
 
-            <label for="product_id">id</label>
-            <input type="number" name="product_id" id="product_id">
-            
-            <button type="submit">Upload Product</button>
-        </form>
+        <label for="product_description">Description</label>
+        <input
+          type="text"
+          name="product_description"
+          id="product_description"
+        />
+
+        <label for="product_quantity">Quantity</label>
+        <input type="number" name="product_quantity" id="product_quantity" />
+
+        <label for="product_price">Price</label>
+        <input type="number" name="product_price" id="product_price" />
+
+        <label for="product_id">id</label>
+        <input type="number" name="product_id" id="product_id" />
+
+        <button type="submit">Upload Product</button>
+      </form>
     </section>
-    
-    
+    <section class="list-of-products">
+      <div class="teste">
+        <table class="table">
+          <thead class="thead">
+            <tr class="thead-tr">
+              <td class="thead-td">image</td>
+              <td class="thead-td">name</td>
+              <td class="thead-td">description</td>
+              <td class="thead-td">price</td>
+              <td class="thead-td">to do</td>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- <tr class="tbody-tr">
+              <td class="tbody-td">imagem of products</td>
+              <td class="tbody-td">Name of products</td>
+              <td class="tbody-td">description of products</td>
+              <td class="tbody-td">price of products</td>
+              <td class="tbody-td"><i class="fa-solid fa-trash"></i> <span class="td">|</span> <i class="fa-solid fa-pen"></i></td>
+            </tr> -->
+          </tbody>
+        </table>
+      </div>
+    </section>
 
     <script src="../assets/js/script.js"></script>
-</body>
+  </body>
 </html>
