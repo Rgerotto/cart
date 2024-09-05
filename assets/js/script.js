@@ -182,7 +182,7 @@ function listOfProducts() {
 
       // If tbody does not exist, create it
       if (!tBody) {
-        tBody = document.createElement('tr');
+        tBody = document.createElement('tbody');
         tBody.classList.add('tbody-tr');
         section.appendChild(tBody);
       }
@@ -214,17 +214,19 @@ function listOfProducts() {
         let lastTwo = price.slice(-2);
         let mainPart = price.slice(0, -2);
         const formmatedPrice = `${mainPart},${lastTwo}`;
-      
-        //console.log(formmatedPrice)
         priceTD.innerText = `$${formmatedPrice}`;
         priceTD.classList.add('tbody-td');
 
         const actionTD = document.createElement('td');
-        actionTD.innerHTML = `
-          <i class="fa-solid fa-trash"></i>
-          <span class="td"> | </span>
-          <i class="fa-solid fa-pen"></i>
-        `; // Icons for delete and edit actions
+        const trashIcon = document.createElement('i');
+        trashIcon.classList.add('fa-solid', 'fa-trash');
+        trashIcon.addEventListener('click', () => {
+          console.log("teste", product.id)
+          deleteProduct(product.id);
+        });
+        actionTD.appendChild(trashIcon);
+        actionTD.innerHTML += '<span class="td"> | </span>';
+        actionTD.innerHTML += '<i class="fa-solid fa-pen"></i>'
         actionTD.classList.add('tbody-td');
 
         // Append cells to the row
@@ -240,6 +242,20 @@ function listOfProducts() {
     })
     .catch(error => console.error('Error fetching products:', error));
 }
-
+function deleteProduct(productId){
+  fetch(`/product/${productId}`, {
+    method: 'DELETE'
+  })
+  .then(response => {
+    if(response.ok) {
+      alert('Product delete seccessfully!');
+      listOfProducts();
+    }
+    else{
+      alert('Failed to delete product.')
+    }
+  })
+  .catch(error => console.error('Error deleting product:', error))
+}
 // Call the function to populate the table when the page loads
 listOfProducts();

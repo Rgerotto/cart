@@ -65,9 +65,11 @@ app.get('/admin', (req, res) => {
 });
 
 app.post('/add_new_product', upload.single('product_file'), async (req, res) => {
+
   try {
-    const { product_name, product_description, product_quantity, product_price, product_id } = req.body;
+    const { product_name, product_description, product_quantity, product_price } = req.body;
     
+    const product_id = Math.floor(10 + Math.random() * 900);
    // Construct the new product object
     const newProduct = new ProductModel({
       id: product_id,
@@ -81,13 +83,31 @@ app.post('/add_new_product', upload.single('product_file'), async (req, res) => 
     // Save the product to the database
     await newProduct.save();
 
-    res.status(201).send('Product added successfully');
+    res.status(201).redirect('/admin');
   } catch (error) {
     console.error('Error adding product:', error); // Log any errors
     res.status(500).send('Error adding product');
   }
 });
 
+app.delete('/product/:id', async(req, res) => {
+  try{
+    const productId = req.params.id;
+    console.log(productId)
+    const result = await ProductModel.deleteOne({id: productId});
+
+    if(result.deletedCount > 0) {
+      res.status(200).send('Product removed successfully')
+    }
+    else{
+      res.status(404).send('Product not fund');
+    }
+  }
+  catch(error){
+    console.error('Error removing product:', error);
+    res.status(500).send('Error removing product')
+  }
+})
 // Start the server
 app.listen(PORT, () => {
   console.log(`Server running at http://localhost:${PORT}`);
